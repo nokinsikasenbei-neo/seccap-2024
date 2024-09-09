@@ -1,0 +1,1 @@
+FLAG{Don't_trust_decompilers_too_much}

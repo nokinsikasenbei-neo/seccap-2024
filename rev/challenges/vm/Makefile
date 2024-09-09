@@ -1,0 +1,1 @@
+gcc -fno-stack-protector -m32 -o file/vm src/vm.c
