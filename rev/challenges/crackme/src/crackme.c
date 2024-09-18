@@ -4,7 +4,7 @@
 
 int main(int argc, char **argv) {
   if (argc < 2) {
-    printf("Usage: %s FLAG\n", argv[0]);
+    printf("Usage: %s <password>\n", argv[0]);
     return 1;
   }
 
@@ -23,6 +23,7 @@ int main(int argc, char **argv) {
 
   if (memcmp(argv[1], enc, sizeof(enc)) == 0) {
     puts("Correct!");
+    printf("FLAG: %s\n", argv[1]);
   } else {
     puts("Wrong...");
   }

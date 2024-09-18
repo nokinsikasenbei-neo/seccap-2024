@@ -1,0 +1,1 @@
+`string`はLinux上で動く実行ファイルです。このファイルをGhidraで解析してみましょう。`string.gzf`は作問者が事前にGhidraに解析させた結果をファイルにしたものです。`string`あるいは`string.gzf`のどちらかをGhidraに読み込ませて、フラグを見つけてみよう。
