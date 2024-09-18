@@ -1,0 +1,1 @@
+gcc -m32 src/incident.c -o file/incident -fno-stack-protector
