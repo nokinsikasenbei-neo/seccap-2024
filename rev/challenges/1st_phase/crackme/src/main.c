@@ -12,9 +12,11 @@ int main(int argc, char **argv) {
   }
 
   const char key[] = "SecCap A 2024";
-  size_t len = strlen(argv[1]);
+  char buf[256];
+  strcpy(buf, argv[1]);
+  size_t len = strlen(buf);
   for (int i = 0; i < len; i++) {
-    argv[1][i] ^= key[i % (sizeof(key)-1)];
+    buf[i] ^= key[i % (sizeof(key)-1)];
   }
 
   // ((A | B) - (A & B))
@@ -22,7 +24,7 @@ int main(int argc, char **argv) {
   //   argv[1][i] = (argv[1][i] | key[i%(sizeof(key)-1)]) - (argv[1][i] & key[i%(sizeof(key)-1)]);
   // }
 
-  if (memcmp(argv[1], enc, sizeof(enc)) == 0) {
+  if (memcmp(buf, enc, sizeof(enc)) == 0) {
     puts("Correct!");
     printf("FLAG: %s\n", argv[1]);
   } else {
