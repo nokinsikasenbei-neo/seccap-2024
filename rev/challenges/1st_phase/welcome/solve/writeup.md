@@ -1,4 +1,4 @@
-# welcome(by 山田)
+# welcome（written by 山田）
 ## 解法
 Ghidra で`welcome.gzf`を開くと、puts関数の引数にFLAGらしきものが見つかる。
 

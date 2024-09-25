@@ -1,4 +1,4 @@
-# command_line(by 滝上)
+# command_line（written by 滝上）
 ## 解法
 Ghidraを開くとflagが格納されている配列が見つかる。asciiに変換して並び替えるとフラグを入手できる。
 
