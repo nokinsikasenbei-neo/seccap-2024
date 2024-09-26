@@ -20,12 +20,12 @@ Wrong...
 Ghidraを起動して`crackme.gzf`を開くと以下のmainを見つけることが出来ます。
 
 ```c
-
 int main(int argc,char **argv)
 
 {
   int iVar1;
   size_t sVar2;
+  byte local_128 [258];
   char local_26 [14];
   int local_c;
   
@@ -48,11 +48,12 @@ int main(int argc,char **argv)
     local_26[0xb] = '2';
     local_26[0xc] = '4';
     local_26[0xd] = '\0';
-    sVar2 = strlen(argv[1]);
+    strcpy((char *)local_128,argv[1]);
+    sVar2 = strlen((char *)local_128);
     for (local_c = 0; (ulong)(long)local_c < sVar2; local_c = local_c + 1) {
-      argv[1][local_c] = local_26[(ulong)(long)local_c % 0xd] ^ argv[1][local_c];
+      local_128[local_c] = local_128[local_c] ^ local_26[(ulong)(long)local_c % 0xd];
     }
-    iVar1 = memcmp(argv[1],enc,38);
+    iVar1 = memcmp(local_128,enc,0x26);
     if (iVar1 == 0) {
       puts("Correct!");
       printf("FLAG: %s\n",argv[1]);
