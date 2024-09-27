@@ -3,7 +3,7 @@
 ## 解法
 function call treeを確認する
 
-![alt text](image.png)
+![alt text](assets/image.png)
 
 `FLAG{a5_b4_c3_d3}`
 
